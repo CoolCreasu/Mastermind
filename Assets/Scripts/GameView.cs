@@ -19,7 +19,7 @@ namespace Mastermind
             for (int i = 0; i < attempt.Length; i++)
             {
                 GameObject peg = Instantiate(pegPrefab, attemptsContainer);
-                peg.transform.position = new Vector3(i * 1.25f, -1.25f - (row * 1.25f), 0); // Adjust row position
+                peg.transform.position = new Vector3(i * 1.25f, -(row * 1.25f), 0); // Adjust row position
                 peg.GetComponentInChildren<Renderer>().material.color = GetColor(attempt[i]);
                 rowPegs[i] = peg;
             }
@@ -35,7 +35,7 @@ namespace Mastermind
             for (int i = 0; i < blackPegs; i++)
             {
                 GameObject feedbackPeg = Instantiate(feedbackPegPrefab, attemptsContainer);
-                feedbackPeg.transform.position = new Vector3((-1.25f - feedbackPegIndex) * 1.25f, -1.25f - (row * 1.25f), 0);
+                feedbackPeg.transform.position = new Vector3((-1.25f - feedbackPegIndex) * 1.25f, -(row * 1.25f), 0);
                 feedbackPeg.GetComponentInChildren<Renderer>().material.color = Color.black;
                 feedbackPegIndex++;
             }
@@ -44,7 +44,7 @@ namespace Mastermind
             for (int i = 0; i < whitePegs; i++)
             {
                 GameObject feedbackPeg = Instantiate(feedbackPegPrefab, attemptsContainer);
-                feedbackPeg.transform.position = new Vector3((-1.25f - feedbackPegIndex) * 1.25f, -1.25f - (row * 1.25f), 0);
+                feedbackPeg.transform.position = new Vector3((-1.25f - feedbackPegIndex) * 1.25f, -(row * 1.25f), 0);
                 feedbackPeg.GetComponentInChildren<Renderer>().material.color = Color.white;
                 feedbackPegIndex++;
             }
@@ -70,7 +70,7 @@ namespace Mastermind
             for (int i = 0; i < attempt.Length; i++)
             {
                 GameObject peg = Instantiate(pegPrefab, attemptsContainer);
-                peg.transform.position = new Vector3(i * 1.25f, -1.25f - (currentRow * 1.25f), 0); // Place preview on the first row
+                peg.transform.position = new Vector3(i * 1.25f, -(currentRow * 1.25f), 0); // Place preview on the first row
                 Renderer renderer = peg.GetComponentInChildren<Renderer>();
                 renderer.material.color = GetColor(attempt[i]);
 
